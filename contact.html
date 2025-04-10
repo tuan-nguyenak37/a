@@ -333,74 +333,7 @@
         </div>
       </section>
 
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          // Kiểm tra nếu có form đặt bàn trên trang
-          const reservationForm = document.getElementById("reservation-form");
-          if (reservationForm) {
-            reservationForm.addEventListener("submit", function (event) {
-              // Ngăn không cho trang tải lại
-              event.preventDefault();
-
-              // Lấy giá trị từ các trường input
-              const customerName = document.querySelector(
-                'input[name="customer-name"]'
-              ).value;
-              const customerPhone = document.querySelector(
-                'input[name="customer-phone"]'
-              ).value;
-              const guestCount = document.querySelector(
-                'select[name="guest-count"]'
-              ).value;
-              const reservationDate = document.querySelector(
-                'input[name="reservation-date"]'
-              ).value;
-              const reservationTime = document.querySelector(
-                'select[name="reservation-time"]'
-              ).value;
-              const customerMessage = document.querySelector(
-                'textarea[name="customer-message"]'
-              ).value;
-
-              // Kiểm tra tính hợp lệ của dữ liệu nhập
-              if (
-                !customerName ||
-                !customerPhone ||
-                !reservationDate ||
-                !reservationTime
-              ) {
-                alert("Vui lòng điền đầy đủ thông tin.");
-                return;
-              }
-
-              // Ẩn form đặt bàn
-              document.querySelector(".reservation-form").style.display =
-                "none";
-
-              // Tạo thông báo thành công và hiển thị thông tin đặt bàn
-              let successMessage = document.createElement("div");
-              successMessage.classList.add("success-message");
-              successMessage.innerHTML = `
-              <h3 class="text-center">Cảm ơn bạn đã đặt bàn, ${customerName}!</h3>
-              <p class="text-center">Dưới đây là thông tin đặt bàn của bạn:</p>
-              <ul>
-                <li><strong>Họ và tên:</strong> ${customerName}</li>
-                <li><strong>Số điện thoại:</strong> ${customerPhone}</li>
-                <li><strong>Số người:</strong> ${guestCount}</li>
-                <li><strong>Ngày đặt:</strong> ${reservationDate}</li>
-                <li><strong>Giờ đặt:</strong> ${reservationTime}</li>
-                <li><strong>Thông điệp:</strong> ${customerMessage}</li>
-              </ul>
-              <p class="text-center">Chúng tôi sẽ liên hệ với bạn sớm nhất.</p>
-            `;
-
-              document
-                .querySelector(".reservation")
-                .appendChild(successMessage);
-            });
-          }
-        });
-      </script>
+      
    
    <footer
    class="footer section has-bg-image text-center"
@@ -445,39 +378,34 @@
            Đăng Ký vs Nhận Ngay <span class="span">25% Off.</span>
          </p>
  
-         <form action="" class="input-wrapper">
-           <div class="icon-wrapper">
-             <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
- 
-             <input
-               type="email"
-               name="email_address"
-               placeholder="Email"
-               autocomplete="off"
-               class="input-field"
-             />
-           </div>
- 
-           <button type="submit" class="btn btn-secondary">
-             <span class="text text-1">Đăng Ký</span>
- 
-             <span class="text text-2" aria-hidden="true">Đăng Ký</span>
-           </button>
-         </form>
-         <script>
-           // Bắt sự kiện submit form
-           document.querySelector('.input-wrapper').addEventListener('submit', function(e) {
-             e.preventDefault(); // Ngăn form reload trang
+         <form id="subscribeForm" action="" class="input-wrapper">
+          <div class="icon-wrapper">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+        
+            <input
+              type="email"
+              id="emailInput"
+              name="email_address"
+              placeholder="Email"
+              autocomplete="off"
+              class="input-field"
+            />
+          </div>
+        
+          <button type="submit" class="btn btn-secondary">
+            <span class="text text-1">Đăng Ký</span>
+            <span class="text text-2" aria-hidden="true">Đăng Ký</span>
+          </button>
+        
+          <!-- Thêm phần hiển thị thông báo -->
+          <p id="successMessage" class="text-center" style="margin-top: 10px;"></p>
+        </form>
+        
+        
+        
+        
+        
          
-             const email = document.querySelector('.input-field').value;
-         
-             if (email) {
-               alert("🎉 Bạn đã đăng ký thành công với email: " + email);
-             } else {
-               alert("⚠️ Vui lòng nhập địa chỉ email.");
-             }
-           });
-         </script>
          
        </div>
  
@@ -595,5 +523,90 @@
       window.location.href = "./login.html";
     }
   </script>
+  <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Kiểm tra nếu có form đặt bàn trên trang
+          const reservationForm = document.getElementById("reservation-form");
+          if (reservationForm) {
+            reservationForm.addEventListener("submit", function (event) {
+              // Ngăn không cho trang tải lại
+              event.preventDefault();
+
+              // Lấy giá trị từ các trường input
+              const customerName = document.querySelector(
+                'input[name="customer-name"]'
+              ).value;
+              const customerPhone = document.querySelector(
+                'input[name="customer-phone"]'
+              ).value;
+              const guestCount = document.querySelector(
+                'select[name="guest-count"]'
+              ).value;
+              const reservationDate = document.querySelector(
+                'input[name="reservation-date"]'
+              ).value;
+              const reservationTime = document.querySelector(
+                'select[name="reservation-time"]'
+              ).value;
+              const customerMessage = document.querySelector(
+                'textarea[name="customer-message"]'
+              ).value;
+
+              // Kiểm tra tính hợp lệ của dữ liệu nhập
+              if (
+                !customerName ||
+                !customerPhone ||
+                !reservationDate ||
+                !reservationTime
+              ) {
+                alert("Vui lòng điền đầy đủ thông tin.");
+                return;
+              }
+
+              // Ẩn form đặt bàn
+              document.querySelector(".reservation-form").style.display =
+                "none";
+
+              // Tạo thông báo thành công và hiển thị thông tin đặt bàn
+              let successMessage = document.createElement("div");
+              successMessage.classList.add("success-message");
+              successMessage.innerHTML = `
+              <h3 class="text-center">Cảm ơn bạn đã đặt bàn, ${customerName}!</h3>
+              <p class="text-center">Dưới đây là thông tin đặt bàn của bạn:</p>
+              <ul>
+                <li><strong>Họ và tên:</strong> ${customerName}</li>
+                <li><strong>Số điện thoại:</strong> ${customerPhone}</li>
+                <li><strong>Số người:</strong> ${guestCount}</li>
+                <li><strong>Ngày đặt:</strong> ${reservationDate}</li>
+                <li><strong>Giờ đặt:</strong> ${reservationTime}</li>
+                <li><strong>Thông điệp:</strong> ${customerMessage}</li>
+              </ul>
+              <p class="text-center">Chúng tôi sẽ liên hệ với bạn sớm nhất.</p>
+            `;
+
+              document
+                .querySelector(".reservation")
+                .appendChild(successMessage);
+            });
+          }
+        });
+      </script>
+      <script>
+        document.getElementById('subscribeForm').addEventListener('submit', function (e) {
+          e.preventDefault(); // Ngăn form reload trang
+      
+          const email = document.getElementById('emailInput').value.trim();
+      
+          if (email) {
+            alert("🎉 Bạn đã đăng ký thành công với email: " + email + "\nChúng tôi sẽ liên hệ đến bạn sớm nhất.");
+            document.getElementById('emailInput').value = ""; // Xoá ô input
+          } else {
+            alert("⚠️ Vui lòng nhập địa chỉ email.");
+          }
+        });
+      </script>
+      
+      
+      
 </body>
 </html>
