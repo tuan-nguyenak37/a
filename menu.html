@@ -107,44 +107,64 @@
             />
           </a>
 
-          
           <ul class="navbar-list">
             <li class="navbar-item" id="home">
-               <a href="./index.html" class="navbar-link hover-underline">
-                  <div class="separator"></div>
-                  <span class="span">Trang Chủ</span>
-               </a>
+              <a href="./index.html" class="navbar-link hover-underline ">
+                <div class="separator"></div>
+                <span class="span">Trang Chủ</span>
+              </a>
             </li>
-         
+          
             <li class="navbar-item" id="menus">
-               <a href="./menu.html" class="navbar-link hover-underline active">
-                  <div class="separator"></div>
-                  <span class="span">Thực Đơn</span>
-               </a>
+              <a href="./menu.html" class="navbar-link hover-underline active">
+                <div class="separator"></div>
+                <span class="span">Thực Đơn</span>
+              </a>
             </li>
-         
+          
             <li class="navbar-item" id="about">
-               <a href="./profile.html" class="navbar-link hover-underline">
-                  <div class="separator"></div>
-                  <span class="span">Thông Tin</span>
-               </a>
+              <a href="./profile.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Thông Tin</span>
+              </a>
             </li>
-         
+          
             <li class="navbar-item" id="chefs">
-               <a href="./chefs.html" class="navbar-link hover-underline">
-                  <div class="separator"></div>
-                  <span class="span">Đầu Bếp</span>
-               </a>
+              <a href="./chefs.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Đầu Bếp</span>
+              </a>
             </li>
-         
+          
             <li class="navbar-item" id="contact">
-              <a href="./contact.html" class="navbar-link hover-underline">
-
-                  <div class="separator"></div>
-                  <span class="span">Đặt Bàn</span>
-               </a>
+              <a href="./contact.html" class="navbar-link hover-underline ">
+                <div class="separator"></div>
+                <span class="span">Đặt Bàn</span>
+              </a>
             </li>
-         </ul>
+          
+           
+          
+            <li class="navbar-item" id="userArea" style="display: none;">
+              <a href="#" class="navbar-link hover-underline" id="userName">
+                <div class="separator"></div>
+                <span class="span"></span>
+              </a>
+              <a href="./login.html" class="navbar-link hover-underline text-danger ms-2" onclick="logoutUser()" id="logoutBtn">
+                <span class="span">Đăng Xuất</span>
+              </a>
+            </li>
+            
+            <li class="navbar-item" id="loginMenu">
+              <a href="./login.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Đăng Nhập</span>
+              </a>
+            </li>
+            
+
+          </ul>
+        
          
 
           <div class="text-center">
@@ -807,5 +827,29 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginMenu = document.getElementById("loginMenu");
+        const userArea = document.getElementById("userArea");
+        const userName = document.getElementById("userName");
+    
+        const currentUser = localStorage.getItem("loggedInUser");
+    
+        if (currentUser) {
+          // Hiển thị tên người dùng
+          userName.querySelector(".span").textContent = currentUser;
+          userArea.style.display = "flex"; // hiện user + logout
+          loginMenu.style.display = "none"; // ẩn nút đăng nhập
+        } else {
+          userArea.style.display = "none";
+          loginMenu.style.display = "block";
+        }
+      });
+    
+      function logoutUser() {
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "./login.html";
+      }
+    </script>
   </body>
 </html>

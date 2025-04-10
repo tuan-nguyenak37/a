@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng Ký & Đăng Nhập</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #2c2c2c;
+        color: #fff;
+      }
+
+      .form-container {
+        max-width: 500px;
+        margin: 80px auto;
+        padding: 30px;
+        border-radius: 15px;
+        background-color: #3a3a3a;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .form-label,
+      .toggle-link {
+        color: #fff;
+      }
+
+      .toggle-link {
+        cursor: pointer;
+        color: #0d6efd;
+      }
+
+      .toggle-link:hover {
+        text-decoration: underline;
+      }
+
+      input.form-control {
+        background-color: #4a4a4a;
+        color: #fff;
+        border: 1px solid #666;
+      }
+
+      input.form-control::placeholder {
+        color: #aaa;
+      }
+
+      #successAlert {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        padding: 20px 40px;
+        font-size: 1.2rem;
+        border-radius: 12px;
+        background-color: #28a745;
+        color: white;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        text-align: center;
+        color: #00ffcc;
+        font-size: 36px;
+        font-weight: bold;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        margin-top: 60px;
+        margin-bottom: 30px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      "
+    >
+      Chào mừng bạn đến với nhà hàng Grilli
+    </div>
+    <div class="form-container">
+      <h3 class="text-center mb-4" id="formTitle">Đăng Nhập</h3>
+
+      <!-- Đăng nhập -->
+      <div id="loginForm">
+        <div class="mb-3">
+          <label class="form-label">Tên đăng nhập</label>
+          <input
+            type="text"
+            class="form-control"
+            id="loginUsername"
+            placeholder="Nhập tên đăng nhập"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mật khẩu</label>
+          <input
+            type="password"
+            class="form-control"
+            id="loginPassword"
+            placeholder="Nhập mật khẩu"
+          />
+        </div>
+        <button class="btn btn-success w-100 mb-3" onclick="login()">
+          Đăng Nhập
+        </button>
+        <p class="text-center">
+          Chưa có tài khoản?
+          <span class="toggle-link" onclick="toggleForm()">Đăng ký</span>
+        </p>
+      </div>
+
+      <!-- Đăng ký -->
+      <div id="registerForm" style="display: none">
+        <div class="mb-3">
+          <label class="form-label">Họ và Tên</label>
+          <input
+            type="text"
+            class="form-control"
+            id="regFullName"
+            placeholder="Nhập họ và tên"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Ngày Sinh</label>
+          <input type="date" class="form-control" id="regDOB" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Tên Đăng Nhập</label>
+          <input
+            type="text"
+            class="form-control"
+            id="regUsername"
+            placeholder="Tạo tên đăng nhập"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mật Khẩu</label>
+          <input
+            type="password"
+            class="form-control"
+            id="regPassword"
+            placeholder="Tạo mật khẩu"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Xác Nhận Mật Khẩu</label>
+          <input
+            type="password"
+            class="form-control"
+            id="regConfirmPassword"
+            placeholder="Xác nhận mật khẩu"
+          />
+        </div>
+        <button class="btn btn-primary w-100 mb-3" onclick="register()">
+          Đăng Ký
+        </button>
+        <p class="text-center">
+          Đã có tài khoản?
+          <span class="toggle-link" onclick="toggleForm()">Đăng nhập</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Thông báo đăng nhập thành công -->
+    <div id="successAlert">Đăng nhập thành công!</div>
+
+    <script>
+      function toggleForm() {
+        const login = document.getElementById("loginForm");
+        const register = document.getElementById("registerForm");
+        const title = document.getElementById("formTitle");
+
+        if (login.style.display === "none") {
+          login.style.display = "block";
+          register.style.display = "none";
+          title.innerText = "Đăng Nhập";
+        } else {
+          login.style.display = "none";
+          register.style.display = "block";
+          title.innerText = "Đăng Ký";
+        }
+      }
+
+      function register() {
+        const fullName = document.getElementById("regFullName").value.trim();
+        const dob = document.getElementById("regDOB").value;
+        const username = document.getElementById("regUsername").value.trim();
+        const password = document.getElementById("regPassword").value;
+        const confirmPassword =
+          document.getElementById("regConfirmPassword").value;
+
+        if (!fullName || !dob || !username || !password || !confirmPassword) {
+          alert("Vui lòng điền đầy đủ thông tin!");
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Mật khẩu xác nhận không đúng!");
+          return;
+        }
+
+        if (localStorage.getItem("user_" + username)) {
+          alert("Tên đăng nhập đã tồn tại!");
+          return;
+        }
+
+        const userData = {
+          username: username,
+          password: password,
+          fullName: fullName,
+          dob: dob,
+        };
+
+        localStorage.setItem("user_" + username, JSON.stringify(userData));
+        localStorage.setItem("loggedInUser", username);
+        showSuccess("Đăng ký và đăng nhập thành công!");
+      }
+
+      function login() {
+        const username = document.getElementById("loginUsername").value.trim();
+        const password = document.getElementById("loginPassword").value.trim();
+        const userData = JSON.parse(localStorage.getItem("user_" + username));
+
+        if (userData && password === userData.password) {
+          localStorage.setItem("loggedInUser", username);
+          showSuccess("Đăng nhập thành công!");
+        } else {
+          alert("Sai tên đăng nhập hoặc mật khẩu!");
+        }
+      }
+
+      function showSuccess(message) {
+        const alertBox = document.getElementById("successAlert");
+        alertBox.textContent = message;
+        alertBox.style.display = "block";
+
+        setTimeout(() => {
+          alertBox.style.display = "none";
+          window.location.href = "index.html";
+        }, 2500);
+      }
+    </script>
+  </body>
+</html>

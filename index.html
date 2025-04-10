@@ -115,36 +115,57 @@
                 <span class="span">Trang Chủ</span>
               </a>
             </li>
-
+          
             <li class="navbar-item" id="menus">
               <a href="./menu.html" class="navbar-link hover-underline">
                 <div class="separator"></div>
                 <span class="span">Thực Đơn</span>
               </a>
             </li>
-
+          
             <li class="navbar-item" id="about">
               <a href="./profile.html" class="navbar-link hover-underline">
                 <div class="separator"></div>
                 <span class="span">Thông Tin</span>
               </a>
             </li>
-
+          
             <li class="navbar-item" id="chefs">
               <a href="./chefs.html" class="navbar-link hover-underline">
                 <div class="separator"></div>
                 <span class="span">Đầu Bếp</span>
               </a>
             </li>
-
+          
             <li class="navbar-item" id="contact">
               <a href="./contact.html" class="navbar-link hover-underline">
-
                 <div class="separator"></div>
                 <span class="span">Đặt Bàn</span>
               </a>
             </li>
+          
+           
+          
+            <li class="navbar-item" id="userArea" style="display: none;">
+              <a href="#" class="navbar-link hover-underline" id="userName">
+                <div class="separator"></div>
+                <span class="span"></span>
+              </a>
+              <a href="./login.html" class="navbar-link hover-underline text-danger ms-2" onclick="logoutUser()" id="logoutBtn">
+                <span class="span">Đăng Xuất</span>
+              </a>
+            </li>
+            
+            <li class="navbar-item" id="loginMenu">
+              <a href="./login.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Đăng Nhập</span>
+              </a>
+            </li>
+            
+
           </ul>
+          
 
           <div class="text-center">
             <p class="headline-1 navbar-title">Hãy Đến Với Chúng Tôi</p>
@@ -181,6 +202,8 @@
         <div class="overlay" data-nav-toggler data-overlay></div>
       </div>
     </header>
+    
+    
 
     <main>
       <article>
@@ -304,7 +327,7 @@
             <ion-icon name="chevron-forward"></ion-icon>
           </button>
 
-          <a href="./profile.html" class="hero-btn has-after">
+          <a href="./contact.html" class="hero-btn has-after">
             <img
               src="./assets/images/hero-icon.png"
               width="48"
@@ -783,5 +806,29 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginMenu = document.getElementById("loginMenu");
+        const userArea = document.getElementById("userArea");
+        const userName = document.getElementById("userName");
+    
+        const currentUser = localStorage.getItem("loggedInUser");
+    
+        if (currentUser) {
+          // Hiển thị tên người dùng
+          userName.querySelector(".span").textContent = currentUser;
+          userArea.style.display = "flex"; // hiện user + logout
+          loginMenu.style.display = "none"; // ẩn nút đăng nhập
+        } else {
+          userArea.style.display = "none";
+          loginMenu.style.display = "block";
+        }
+      });
+    
+      function logoutUser() {
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "./login.html";
+      }
+    </script>
   </body>
 </html>
