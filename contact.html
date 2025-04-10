@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Grilli - Amazing & Delicious Food</title>
+    <meta name="title" content="Grilli - Amazing & Delicious Food" />
+    <meta
+      name="description"
+      content="This is a Restaurant html template made by codewithsadee"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg" />
+  </head>
+
+  <body id="top">
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <p class="text">Grilli</p>
+    </div>
+
+    <div class="topbar">
+      <div class="container">
+        <address class="topbar-item">
+          <div class="icon">
+            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">
+            556 Đại lộ Bình Dương, Thành phố Thủ Dầu Một
+          </span>
+        </address>
+
+        <div class="separator"></div>
+
+        <div class="topbar-item item-2">
+          <div class="icon">
+            <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">Giờ Mở Cửa : 8.00 AM to 10.00 PM</span>
+        </div>
+
+        <a href="tel:0979326005" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">0979326005</span>
+        </a>
+
+        <div class="separator"></div>
+
+        <a href="23050150@student.bdu.edu.vn" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">23050150@student.bdu.edu.vn</span>
+        </a>
+      </div>
+    </div>
+
+    <header class="header" data-header>
+      <div class="container">
+        <a href="#" class="logo">
+          <img
+            src="./assets/images/logo.svg"
+            width="160"
+            height="50"
+            alt="Grilli - Home"
+          />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <button class="close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+          <a href="#" class="logo">
+            <img
+              src="./assets/images/logo.svg"
+              width="160"
+              height="50"
+              alt="Grilli - Home"
+            />
+          </a>
+
+          <ul class="navbar-list">
+            <li class="navbar-item" id="home">
+              <a href="./index.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Trang Chủ</span>
+              </a>
+            </li>
+
+            <li class="navbar-item" id="menus">
+              <a href="./menu.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Thực Đơn</span>
+              </a>
+            </li>
+
+            <li class="navbar-item" id="about">
+              <a href="./profile.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Thông Tin</span>
+              </a>
+            </li>
+
+            <li class="navbar-item" id="chefs">
+              <a href="./chefs.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Đầu Bếp</span>
+              </a>
+            </li>
+
+            <li class="navbar-item" id="contact">
+              <a href="./contact.html" class="navbar-link hover-underline active">
+
+                <div class="separator"></div>
+                <span class="span">Đặt Bàn</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="text-center">
+            <p class="headline-1 navbar-title">Hãy Đến Với Chúng Tôi</p>
+
+            <address class="body-4">
+              556 Đại lộ Bình Dương, Thành phố Thủ Dầu Một
+            </address>
+
+            <p class="body-4 navbar-text">Open: 9.30 am - 2.30pm</p>
+
+            <a href="23050150@student.bdu.edu.vn" class="body-4 sidebar-link"
+              >23050150@student.bdu.edu.vn</a
+            >
+
+            <div class="separator"></div>
+
+            <p class="contact-label">Đặt Bàn</p>
+
+            <a
+              href="tel:0979326005"
+              class="body-1 contact-number hover-underline"
+            >
+              0979326005
+            </a>
+          </div>
+        </nav>
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+</header>
+<body>
+    <!-- 
+        - #RESERVATION
+      -->
+        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+      <section class="reservation">
+        <div class="container">
+          <div class="form reservation-form bg-black-10">
+            <form action="" class="form-left" id="reservation-form">
+              <h2 class="headline-1 text-center" id="reservation-header">
+                Đặt Bàn Online
+              </h2>
+
+              <p class="form-text text-center" id="duoi">
+                Yêu cầu đặt bàn
+                <a href="tel:0337.745.617" class="link">0979326005</a>
+                hoặc điền vào mẫu đơn dưới đây
+              </p>
+
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="customer-name"
+                  placeholder="Họ và tên"
+                  autocomplete="off"
+                  class="input-field"
+                  required
+                />
+                <input
+                  type="tel"
+                  name="customer-phone"
+                  placeholder="Số điện thoại"
+                  autocomplete="off"
+                  class="input-field"
+                  required
+                />
+              </div>
+
+              <div class="input-wrapper">
+                <select name="guest-count" class="input-field" required>
+                  <option value="1 người">1 Người</option>
+                  <option value="2 người">2 Người</option>
+                  <option value="3 người">3 Người</option>
+                  <option value="4 người">4 Người</option>
+                  <option value="5 người">5 Người</option>
+                  <option value="6 người">6 Người</option>
+                  <option value="7 người">7 Người</option>
+                  <option value="8 người">8 Người</option>
+                  <option value="9 người">9 Người</option>
+                  <option value="10 người">10 Người</option>
+                  <option value="10 người trở lên">Nhiều hơn</option>
+                </select>
+
+                <input
+                  type="date"
+                  name="reservation-date"
+                  class="input-field"
+                  required
+                />
+
+                <select name="reservation-time" class="input-field" required>
+                  <option value="08:00">08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="19:00">19:00</option>
+                  <option value="20:00">20:00</option>
+                  <option value="21:00">21:00</option>
+                  <option value="22:00">22:00</option>
+                </select>
+              </div>
+
+              <textarea
+                name="customer-message"
+                placeholder="Lời nhắn"
+                autocomplete="off"
+                class="input-field"
+              ></textarea>
+
+              <button type="submit" class="btn btn-secondary">
+                <span class="text text-1">Đặt Bàn</span>
+              </button>
+            </form>
+
+            <div
+              class="form-right text-center"
+              style="
+                background-image: url('./assets/images/form-pattern.png');
+              "
+            >
+              <h2 class="headline-1 text-center">Liên Hệ</h2>
+
+              <p class="contact-label">Yêu cầu đặt bàn</p>
+
+              <a
+                href="tel:0979326005"
+                class="body-1 contact-number hover-underline"
+                >0979326005</a
+              >
+
+              <div class="separator"></div>
+
+              <p class="contact-label">Địa Chỉ</p>
+
+              <address class="body-4">
+                556 Đại lộ Bình Dương, Thành phố Thủ Dầu Một
+              </address>
+
+              <p class="contact-label">Giờ Trưa</p>
+
+              <p class="body-4">
+                Thứ Hai đến Chủ Nhật <br />
+                11:00 sáng - 2:30 chiều
+              </p>
+
+              <p class="contact-label">Giờ Tối</p>
+
+              <p class="body-4">
+                Thứ Hai đến Chủ Nhật <br />
+                05:00 chiều - 10:00 tối
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Kiểm tra nếu có form đặt bàn trên trang
+          const reservationForm = document.getElementById("reservation-form");
+          if (reservationForm) {
+            reservationForm.addEventListener("submit", function (event) {
+              // Ngăn không cho trang tải lại
+              event.preventDefault();
+
+              // Lấy giá trị từ các trường input
+              const customerName = document.querySelector(
+                'input[name="customer-name"]'
+              ).value;
+              const customerPhone = document.querySelector(
+                'input[name="customer-phone"]'
+              ).value;
+              const guestCount = document.querySelector(
+                'select[name="guest-count"]'
+              ).value;
+              const reservationDate = document.querySelector(
+                'input[name="reservation-date"]'
+              ).value;
+              const reservationTime = document.querySelector(
+                'select[name="reservation-time"]'
+              ).value;
+              const customerMessage = document.querySelector(
+                'textarea[name="customer-message"]'
+              ).value;
+
+              // Kiểm tra tính hợp lệ của dữ liệu nhập
+              if (
+                !customerName ||
+                !customerPhone ||
+                !reservationDate ||
+                !reservationTime
+              ) {
+                alert("Vui lòng điền đầy đủ thông tin.");
+                return;
+              }
+
+              // Ẩn form đặt bàn
+              document.querySelector(".reservation-form").style.display =
+                "none";
+
+              // Tạo thông báo thành công và hiển thị thông tin đặt bàn
+              let successMessage = document.createElement("div");
+              successMessage.classList.add("success-message");
+              successMessage.innerHTML = `
+              <h3 class="text-center">Cảm ơn bạn đã đặt bàn, ${customerName}!</h3>
+              <p class="text-center">Dưới đây là thông tin đặt bàn của bạn:</p>
+              <ul>
+                <li><strong>Họ và tên:</strong> ${customerName}</li>
+                <li><strong>Số điện thoại:</strong> ${customerPhone}</li>
+                <li><strong>Số người:</strong> ${guestCount}</li>
+                <li><strong>Ngày đặt:</strong> ${reservationDate}</li>
+                <li><strong>Giờ đặt:</strong> ${reservationTime}</li>
+                <li><strong>Thông điệp:</strong> ${customerMessage}</li>
+              </ul>
+              <p class="text-center">Chúng tôi sẽ liên hệ với bạn sớm nhất.</p>
+            `;
+
+              document
+                .querySelector(".reservation")
+                .appendChild(successMessage);
+            });
+          }
+        });
+      </script>
+   
+   <footer
+   class="footer section has-bg-image text-center"
+   style="background-image: url('./assets/images/footer-bg.jpg')"
+ >
+   <div class="container">
+     <div class="footer-top grid-list">
+       <div class="footer-brand has-before has-after">
+         <a href="#" class="logo">
+           <img
+             src="./assets/images/logo.svg"
+             width="160"
+             height="50"
+             loading="lazy"
+             alt="grilli home"
+           />
+         </a>
+ 
+         <address class="body-4">
+           556 Đại lộ Bình Dương, Thành phố Thủ Dầu Một
+         </address>
+ 
+         <a href="mailto:gotri4018@gmail.com" class="body-4 contact-link"
+           >23050150@student.bdu.edu.vn</a
+         >
+ 
+         <a href="tel:+88123123456" class="body-4 contact-link"
+           >Đặt bàn ngay : 0979326005</a
+         >
+ 
+         <p class="body-4">Giờ Mở Cửa : 09:00 AM - 01:00 PM</p>
+ 
+         <div class="wrapper">
+           <div class="separator"></div>
+           <div class="separator"></div>
+           <div class="separator"></div>
+         </div>
+ 
+         <p class="title-1">Tin Tức và Ưu Đãi</p>
+ 
+         <p class="label-1">
+           Đăng Ký vs Nhận Ngay <span class="span">25% Off.</span>
+         </p>
+ 
+         <form action="" class="input-wrapper">
+           <div class="icon-wrapper">
+             <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+ 
+             <input
+               type="email"
+               name="email_address"
+               placeholder="Email"
+               autocomplete="off"
+               class="input-field"
+             />
+           </div>
+ 
+           <button type="submit" class="btn btn-secondary">
+             <span class="text text-1">Đăng Ký</span>
+ 
+             <span class="text text-2" aria-hidden="true">Đăng Ký</span>
+           </button>
+         </form>
+         <script>
+           // Bắt sự kiện submit form
+           document.querySelector('.input-wrapper').addEventListener('submit', function(e) {
+             e.preventDefault(); // Ngăn form reload trang
+         
+             const email = document.querySelector('.input-field').value;
+         
+             if (email) {
+               alert("🎉 Bạn đã đăng ký thành công với email: " + email);
+             } else {
+               alert("⚠️ Vui lòng nhập địa chỉ email.");
+             }
+           });
+         </script>
+         
+       </div>
+ 
+       <ul class="footer-list">
+         <li>
+           <a href="./index.html" class="label-2 footer-link hover-underline">Trang Chủ</a>
+         </li>
+ 
+         <li>
+           <a href="./contact.html" class="label-2 footer-link hover-underline">Thực Đơn</a>
+         </li>
+ 
+         <li>
+           <a href="./profile.html" class="label-2 footer-link hover-underline"
+             >Thông Tin</a
+           >
+         </li>
+ 
+         <li>
+           <a href="./chefs.html" class="label-2 footer-link hover-underline"
+             >Đầu Bếp</a
+           >
+         </li>
+ 
+         <li>
+           <a href="#duoi" class="label-2 footer-link hover-underline"
+             >Liên Hệ</a
+           >
+         </li>
+       </ul>
+ 
+       <ul class="footer-list">
+         <li>
+           <a href="https://www.facebook.com/trongtim.khoang.75/" target="_blank" class="label-2 footer-link hover-underline"
+             >Facebook</a
+           >
+         </li>
+ 
+         <li>
+           <a href="https://www.instagram.com/tuan_maliketh/" target="_blank" class="label-2 footer-link hover-underline"
+             >Instagram</a
+           >
+         </li>
+ 
+         
+ 
+         <li>
+           <a href="https://www.youtube.com/watch?v=6uT8wGtB3yQ" class="label-2 footer-link hover-underline"
+             >Youtube</a
+           >
+         </li>
+ 
+         <li>
+           <a href="https://www.bdu.edu.vn/" target="_blank" class="label-2 footer-link hover-underline"
+             >Google Map</a
+           >
+         </li>
+       </ul>
+     </div>
+ 
+     <div class="footer-bottom"></div>
+   </div>
+ </footer>
+ 
+  <!-- 
+  - #BACK TO TOP
+-->
+
+  <a
+    href="#top"
+    class="back-top-btn active"
+    aria-label="back to top"
+    data-back-top-btn
+  >
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- 
+  - custom js link
+-->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+  - ionicon link
+-->
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+</body>
+</html>

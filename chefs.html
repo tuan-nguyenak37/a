@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Grilli - Amazing & Delicious Food</title>
+    <meta name="title" content="Grilli - Amazing & Delicious Food" />
+    <meta
+      name="description"
+      content="This is a Restaurant html template made by codewithsadee"
+    />
+
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg" />
+    <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg" />
+  </head>
+  <body id="top">
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <p class="text">Grilli</p>
+    </div>
+
+    <div class="topbar">
+      <div class="container">
+        <address class="topbar-item">
+          <div class="icon">
+            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">
+            556 Đại lộ Bình Dương, Thành phố Thủ Dầu Một
+          </span>
+        </address>
+
+        <div class="separator"></div>
+
+        <div class="topbar-item item-2">
+          <div class="icon">
+            <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">Giờ Mở Cửa : 8.00 AM to 10.00 PM</span>
+        </div>
+
+        <a href="tel:0979326005" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">0979326005</span>
+        </a>
+
+        <div class="separator"></div>
+
+        <a href="23050150@student.bdu.edu.vn" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+          </div>
+
+          <span class="span">23050150@student.bdu.edu.vn</span>
+        </a>
+      </div>
+    </div>
+
+    <header class="header" data-header>
+      <div class="container">
+        <a href="#" class="logo">
+          <img
+            src="./assets/images/logo.svg"
+            width="160"
+            height="50"
+            alt="Grilli - Home"
+          />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <button class="close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+          <a href="#" class="logo">
+            <img
+              src="./assets/images/logo.svg"
+              width="160"
+              height="50"
+              alt="Grilli - Home"
+            />
+          </a>
+
+          
+          <ul class="navbar-list">
+            <li class="navbar-item" id="home">
+               <a href="./index.html" class="navbar-link hover-underline">
+                  <div class="separator"></div>
+                  <span class="span">Trang Chủ</span>
+               </a>
+            </li>
+         
+            <li class="navbar-item" id="menus">
+               <a href="./menu.html" class="navbar-link hover-underline">
+                  <div class="separator"></div>
+                  <span class="span">Thực Đơn</span>
+               </a>
+            </li>
+         
+            <li class="navbar-item" id="about">
+               <a href="./profile.html" class="navbar-link hover-underline">
+                  <div class="separator"></div>
+                  <span class="span">THông Tin</span>
+               </a>
+            </li>
+         
+            <li class="navbar-item" id="chefs">
+               <a href="./chefs.html" class="navbar-link hover-underline active">
+                  <div class="separator"></div>
+                  <span class="span">Đầu Bếp</span>
+               </a>
+            </li>
+         
+            <li class="navbar-item" id="contact">
+              <a href="./contact.html" class="navbar-link hover-underline">
+                  <div class="separator"></div>
+                  <span class="span">Đặt Bàn</span>
+               </a>
+            </li>
+         </ul>
+         
+
+          <div class="text-center">
+            <p class="headline-1 navbar-title">Visit Us</p>
+
+            <address class="body-4">
+              556 Đại lộ Bình Dương, Thành phố Thủ Dầu Một
+            </address>
+
+            <p class="body-4 navbar-text">Giờ Mở Cửa: 9.30 am - 2.30pm</p>
+
+            <a href="23050150@student.bdu.edu.vn" class="body-4 sidebar-link"
+              >23050150@student.bdu.edu.vn</a
+            >
+
+            <div class="separator"></div>
+
+            <p class="contact-label">Đặt Bàn</p>
+
+            <a
+              href="tel:0979326005"
+              class="body-1 contact-number hover-underline"
+            >
+              0979326005
+            </a>
+          </div>
+        </nav>
+
+       
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+      <!-- AOS CSS (THÊM VÀO <head>) -->
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    </header>
+
+    <main>
+    
+        <br> <br> <br> <br> <br>
+<!-- BẾP TRƯỞNG GORDON RAMSAY -->
+<section class="section about text-center" aria-labelledby="about-label" id="about">
+  <div class="container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front about-content">
+          <p class="label-2 section-subtitle" id="about-label">Đầu Bếp</p>
+          <h2 class="headline-1 section-title">Bếp trưởng Gordon Ramsay</h2>
+          <p class="section-text">
+            Đầu bếp hàng đầu thế giới nổi bật với các chương trình truyền hình như Hell's Kitchen, MasterChef...
+          </p>
+        </div>
+        <div class="flip-card-back">
+          <blockquote class="chef-quote">
+            ❝ Tôi không nấu ăn để gây ấn tượng, tôi nấu để khiến mọi người hài lòng. ❞<br />
+            <span>- Gordon Ramsay</span>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <figure class="about-banner">
+      <img
+        src="./assets/images/gordon-ramsay-646367718a5f4.jpg"
+        width="570"
+        height="570"
+        loading="lazy"
+        alt="Gordon Ramsay Banner"
+        class="w-100"
+        data-parallax-item
+        data-parallax-speed="1"
+      />
+
+      <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
+        <img src="./assets/images/gordon-ramsay-burger.jpg" width="285" height="285" alt="Burger" class="w-100" />
+      </div>
+
+      <div class="abs-img abs-img-2 has-before">
+        <img src="./assets/images/badge-2.png" width="133" height="134" alt="Badge" />
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- MÓN ĐẶC BIỆT - CÓ VIDEO -->
+<section class="special-dish text-center" aria-labelledby="dish-label">
+  <div class="special-dish-banner">
+    <img src="./assets/images/Beef-Wellington-Ramsay2.jpg" width="940" height="900" alt="special dish" class="img-cover" />
+    
+    <!-- VIDEO BUTTON -->
+    <button class="play-video-btn" onclick="document.getElementById('video-popup').style.display='block'">▶</button>
+  </div>
+
+  <div class="special-dish-content bg-black-10">
+    <div class="container">
+      <img src="./assets/images/badge-1.png" width="28" height="41" alt="badge" class="abs-img" />
+
+      <p class="section-subtitle label-2">
+        Được chính tay đầu bếp hàng đầu thế giới chế biến
+      </p>
+
+      <h2 class="headline-1 section-title">Bít tết Wellington</h2>
+
+      <p class="section-text">
+        Sự kết hợp hoàn hảo giữa các thành phần, đòi hỏi kỹ thuật nấu nướng cao cấp.
+      </p>
+
+      <div class="wrapper">
+        <del class="del body-3">400.000 vnd</del>
+        <span class="span body-1">350.000 vnd</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO POPUP -->
+  <div id="video-popup" class="video-popup">
+    <div class="video-content">
+      <span class="close-btn" onclick="document.getElementById('video-popup').style.display='none'">&times;</span>
+      <video controls autoplay>
+        <source src="./assets/videos/beef-wellington.mp4" type="video/mp4" />
+        Trình duyệt của bạn không hỗ trợ video.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+
+</section>
+
+<!-- BẾP PHÓ THOMAS KELLER -->
+<section class="section about text-center" aria-labelledby="about-label" id="about-thomas">
+  <div class="container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front about-content">
+          <p class="label-2 section-subtitle" id="about-label">Đầu Bếp</p>
+          <h2 class="headline-1 section-title">Bếp phó Thomas Keller</h2>
+          <p class="section-text">
+            Được biết đến với kỹ thuật nấu ăn tinh tế và phong cách sáng tạo, chủ nhà hàng The French Laundry...
+          </p>
+        </div>
+        <div class="flip-card-back">
+          <blockquote class="chef-quote">
+            ❝ Thành công đến từ sự kiên nhẫn, chi tiết và tôn trọng nguyên liệu. ❞<br />
+            <span>- Thomas Keller</span>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <figure class="about-banner">
+      <img
+        src="./assets/images/Thomas-Keller.jpg"
+        width="570"
+        height="570"
+        loading="lazy"
+        alt="Thomas Keller"
+        class="w-100"
+        data-parallax-item
+        data-parallax-speed="1"
+      />
+
+      <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
+        <img
+          src="./assets/images/chef2m_zmfr42.png"
+          width="285"
+          height="285"
+          loading="lazy"
+          alt="Dish"
+          class="w-100"
+        />
+      </div>
+
+      <div class="abs-img abs-img-2 has-before">
+        <img
+          src="./assets/images/badge-2.png"
+          width="133"
+          height="134"
+          loading="lazy"
+          alt="Badge"
+        />
+      </div>
+    </figure>
+  </div>
+</section>
+
+
+        
+        
+          
+       
+
+    <a
+      href="#top"
+      class="back-top-btn active"
+      aria-label="back to top"
+      data-back-top-btn
+    >
+      <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
