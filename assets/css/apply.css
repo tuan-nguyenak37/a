@@ -1,0 +1,32 @@
+body {
+  background-image: url("../images/nen.webp"); /* hoặc đường dẫn ảnh online */
+  background-size: cover; /* Giúp ảnh phủ toàn bộ màn hình */
+  background-repeat: no-repeat; /* Không lặp lại ảnh */
+  background-position: center; /* Căn giữa ảnh */
+}
+
+.form-container {
+  background-color: #000000;
+  max-width: 600px;
+  color: #f1f1f1;
+  font-size: 20px;
+}
+
+.btn-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background-color: #eac313;
+  color: white;
+  padding: 30px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 10;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn-back:hover {
+  background-color: #b82020;
+}
