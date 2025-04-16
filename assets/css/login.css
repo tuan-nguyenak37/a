@@ -1,0 +1,62 @@
+body {
+  background: url("../images/nenlogin.avif") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #0c0c0c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Đảm bảo các hiệu ứng chuyển động không bị cắt */
+}
+
+.form-label,
+.toggle-link {
+  color: #fff;
+}
+
+.toggle-link {
+  cursor: pointer;
+  color: #0d6efd;
+}
+
+.toggle-link:hover {
+  text-decoration: underline;
+}
+
+input.form-control {
+  background-color: #4a4a4a;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+input.form-control::placeholder {
+  color: #aaa;
+}
+
+#successAlert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 20px 40px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  background-color: #28a745;
+  color: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+#formTitle {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}

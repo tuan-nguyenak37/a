@@ -10,68 +10,15 @@
     />
     <!-- Anime.js -->
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-    <style>
-      body {
-        background-color: #2c2c2c;
-        color: #fff;
-      }
-
-      .form-container {
-        max-width: 500px;
-        margin: 80px auto;
-        padding: 30px;
-        border-radius: 15px;
-        background-color: #3a3a3a;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        overflow: hidden; /* Đảm bảo các hiệu ứng chuyển động không bị cắt */
-      }
-
-      .form-label,
-      .toggle-link {
-        color: #fff;
-      }
-
-      .toggle-link {
-        cursor: pointer;
-        color: #0d6efd;
-      }
-
-      .toggle-link:hover {
-        text-decoration: underline;
-      }
-
-      input.form-control {
-        background-color: #4a4a4a;
-        color: #fff;
-        border: 1px solid #666;
-      }
-
-      input.form-control::placeholder {
-        color: #aaa;
-      }
-
-      #successAlert {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        padding: 20px 40px;
-        font-size: 1.2rem;
-        border-radius: 12px;
-        background-color: #28a745;
-        color: white;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/css/login.css" />
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
   </head>
   <body>
     <div
       style="
         text-align: center;
-        color: #00ffcc;
-        font-size: 36px;
+        color: hsl(0, 0%, 96%);
+        font-size: 50px;
         font-weight: bold;
         text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
         margin-top: 60px;
@@ -156,7 +103,7 @@
             placeholder="Xác nhận mật khẩu"
           />
         </div>
-        <button class="btn btn-primary w-100 mb-3" onclick="register()">
+        <button class="btn btn-primary w-100 mb-3 font" onclick="register()">
           Đăng Ký
         </button>
         <p class="text-center">
@@ -169,139 +116,6 @@
     <!-- Thông báo đăng nhập thành công -->
     <div id="successAlert">Đăng nhập thành công!</div>
 
-    <script>
-      // Hàm chuyển đổi giữa form Đăng nhập và Đăng ký sử dụng hiệu ứng của Anime.js
-      function toggleForm() {
-        const loginForm = document.getElementById("loginForm");
-        const registerForm = document.getElementById("registerForm");
-        const formTitle = document.getElementById("formTitle");
-
-        if (loginForm.style.display !== "none") {
-          // Ẩn loginForm với hiệu ứng fade-out và slide sang trái
-          anime({
-            targets: loginForm,
-            opacity: [1, 0],
-            translateX: [0, -50],
-            duration: 500,
-            easing: "easeInOutQuad",
-            complete: function () {
-              loginForm.style.display = "none";
-              // Hiển thị registerForm ở trạng thái ban đầu (ẩn hẳn bên phải)
-              registerForm.style.display = "block";
-              formTitle.innerText = "Đăng Ký";
-              anime({
-                targets: registerForm,
-                opacity: [0, 1],
-                translateX: [50, 0],
-                duration: 500,
-                easing: "easeInOutQuad",
-              });
-            },
-          });
-        } else {
-          // Ẩn registerForm với hiệu ứng fade-out và slide sang phải
-          anime({
-            targets: registerForm,
-            opacity: [1, 0],
-            translateX: [0, 50],
-            duration: 500,
-            easing: "easeInOutQuad",
-            complete: function () {
-              registerForm.style.display = "none";
-              loginForm.style.display = "block";
-              formTitle.innerText = "Đăng Nhập";
-              anime({
-                targets: loginForm,
-                opacity: [0, 1],
-                translateX: [-50, 0],
-                duration: 500,
-                easing: "easeInOutQuad",
-              });
-            },
-          });
-        }
-      }
-
-      function register() {
-        const fullName = document.getElementById("regFullName").value.trim();
-        const dob = document.getElementById("regDOB").value;
-        const username = document.getElementById("regUsername").value.trim();
-        const password = document.getElementById("regPassword").value;
-        const confirmPassword =
-          document.getElementById("regConfirmPassword").value;
-
-        if (!fullName || !dob || !username || !password || !confirmPassword) {
-          alert("Vui lòng điền đầy đủ thông tin!");
-          return;
-        }
-
-        if (password !== confirmPassword) {
-          alert("Mật khẩu xác nhận không đúng!");
-          return;
-        }
-
-        if (localStorage.getItem("user_" + username)) {
-          alert("Tên đăng nhập đã tồn tại!");
-          return;
-        }
-
-        const userData = {
-          username: username,
-          password: password,
-          fullName: fullName,
-          dob: dob,
-        };
-
-        localStorage.setItem("user_" + username, JSON.stringify(userData));
-        localStorage.setItem("loggedInUser", username);
-        showSuccess("Đăng ký và đăng nhập thành công!");
-      }
-
-      function login() {
-        const username = document.getElementById("loginUsername").value.trim();
-        const password = document.getElementById("loginPassword").value.trim();
-        const userData = JSON.parse(localStorage.getItem("user_" + username));
-
-        if (userData && password === userData.password) {
-          localStorage.setItem("loggedInUser", username);
-          showSuccess("Đăng nhập thành công!");
-        } else {
-          alert("Sai tên đăng nhập hoặc mật khẩu!");
-        }
-      }
-
-      // Hiệu ứng thông báo thành công với Anime.js
-      function showSuccess(message) {
-        const alertBox = document.getElementById("successAlert");
-        alertBox.textContent = message;
-        // Đưa thông báo về trạng thái ban đầu để thực hiện hiệu ứng
-        alertBox.style.display = "block";
-        alertBox.style.opacity = 0;
-        alertBox.style.transform = "scale(0.5)";
-
-        anime({
-          targets: alertBox,
-          opacity: [0, 1],
-          scale: [0.5, 1],
-          duration: 500,
-          easing: "easeOutBack",
-        });
-
-        setTimeout(() => {
-          anime({
-            targets: alertBox,
-            opacity: [1, 0],
-            scale: [1, 0.5],
-            duration: 500,
-            easing: "easeInBack",
-            complete: function () {
-              alertBox.style.display = "none";
-              // Sau khi thông báo ẩn, chuyển hướng về trang chủ (hoặc trang khác nếu cần)
-              window.location.href = "index.html";
-            },
-          });
-        }, 2500);
-      }
-    </script>
+    <script src="./assets/js/login.js"></script>
   </body>
 </html>
